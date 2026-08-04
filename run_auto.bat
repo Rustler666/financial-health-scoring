@@ -1,27 +1,20 @@
 @echo off
-chcp 65001 >nul
-title 财务健康度评估系统 - 一键生成报告
-color 0B
-
-echo ================================================
-echo   上市公司财务健康度评估系统 - 自动模式
-echo ================================================
+title Financial Health Scorer - Auto Mode
+echo ============================================
+echo    Financial Health Scoring System
+echo    Auto Mode - One-click Report
+echo ============================================
 echo.
-echo 正在使用已有数据一键生成报告...
+echo Running python main.py --auto ...
 echo.
-
 python main.py --auto
-
 echo.
 if exist reports\financial_health_report.html (
-    echo ================================================
-    echo   报告生成成功！
-    echo ================================================
-    echo.
-    echo 正在打开报告...
+    echo Report generated successfully!
+    echo Opening report in browser...
     start reports\financial_health_report.html
 ) else (
-    echo [错误] 报告未生成，请检查数据文件是否存在。
+    echo ERROR: Report not generated.
 )
 echo.
 pause
